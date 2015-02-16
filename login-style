@@ -1,0 +1,8 @@
+/*CSS File for login window*/
+.body
+
+{
+	background-color:#6699CC;
+	height: 300px;
+	width: 300px;
+}
