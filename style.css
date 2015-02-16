@@ -1,0 +1,62 @@
+/*CSS File for webpages*/
+.myframe
+{
+	height: 500px;
+	width: 300px;
+	margin-right:10px;
+	float:right;
+}
+
+#tf_input
+{
+	width: 800px;
+}
+
+.chatbox{
+
+margin-left: 100px;
+
+float:left;
+}
+
+#body-color
+{
+	background-color:#6699CC;
+}
+#Sign_Up
+{
+	background-image:url('sign-up.png');
+	background-size:500px 500px;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+	margin-top:150px;
+	margin-bottom:150px;
+	margin-right:150px;
+	margin-left:450px;
+	padding:9px 35px;
+}
+
+#Sign_Up_Link
+{
+	margin-top:10px;
+	margin-left:0px;
+}
+#Login
+{
+	background-image:url('sign-up.png');
+	background-size:500px 500px;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+	float:right;
+}
+#button
+{
+	border-radius:10px;
+	width:100px;
+	height:40px;
+	background:#66CC66;
+	font-weight:bold;
+	font-size:20px;
+}
