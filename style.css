@@ -7,11 +7,6 @@
 	float:right;
 }
 
-#tf_input
-{
-	width: 800px;
-}
-
 .chatbox{
 
 margin-left: 100px;
@@ -59,4 +54,16 @@ float:left;
 	background:#66CC66;
 	font-weight:bold;
 	font-size:20px;
+}
+
+#tf_input
+{
+	width: 682px;
+}
+
+#tf_output
+{
+	width: 800px;
+	height: 600px;
+	resize: none;
 }
