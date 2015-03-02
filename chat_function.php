@@ -1,3 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+<html>
+	<head>
+		<title>Main Page</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<?php require_once("login_function.php");
+			require_once('chat_function.php');?>
+	</head>
 <script>
 function loadXMLDoc()
 {
@@ -26,8 +35,12 @@ xmlhttp.onreadystatechange=function() //stores a function (or the name of a func
 
 function sendMessage()
 {
-	
+		
 		var mymessage = document.getElementById("tf_input").value;
+		document.getElementById("tf_input").value = "";
+		
+		var textarea = document.getElementById('tf_output');
+		textarea.scrollTop = textarea.scrollHeight;
 	
 		$.ajax({
 		type: 'POST',
@@ -39,21 +52,6 @@ function sendMessage()
         }
 		});
 }
-
-
-/* function saveMessage(){
-			var tf_input = document.getElementById('tf_input');
-			var data = tf_input.value;
-		$.ajax({
-			url: 'saveMessage.php',
-			type: 'POST',
-			data:  data,
-			success: function(result) {
-				alert('the data was successfully sent to the server');
-			}
-		});
-	
-} */
 </script>
 
 <?php
@@ -62,14 +60,12 @@ function printChat()
 	
 	
 	echo '<div class="chatbox">';
-	echo '<textarea id="tf_output" name="tf_output" cols="100" rows="50"></textarea>';
-	echo '
-	<form action="main.php" method="POST"><br/>
-    <input name="tf_input" type="text" id="tf_input"/>
-	<button type="button" id="save" onclick="sendMessage()">Send Message</button>
-	</form>
-	</div>';
-	
+	echo '<textarea id="tf_output" name="tf_output"></textarea>';
+	echo '<br>';
+	echo '	<input name="tf_input" type="text" id="tf_input" onkeydown="if (event.keyCode == 13) sendMessage()" id="tf_input"/>
+			<button type="button" id="save" onclick="sendMessage()">Send Message</button>
+			</div>';
+	//<form action="main.php" method="POST"><br/>
 }
 
 function saveMessage($username, $input)
@@ -81,9 +77,5 @@ function saveMessage($username, $input)
 	{
         die('There was an error writing this file');
     }
-    else 
-	{
-        echo "$ret bytes written to file";
-	}
 }
 ?>
