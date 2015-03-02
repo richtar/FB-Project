@@ -47,10 +47,13 @@
 			}
 		}
 		
-		
-		
-		
-		
+		$onlineUsers = getUserArray();#
+		echo "<ul>";
+		foreach($onlineUsers as $user)
+		{
+			echo "<li> " . $user['userName'] . "</li>";
+ 		}
+		echo "</ul>";
 		//var_dump($_SESSION['myusername']);
 		?>
 		<!--	<iframe scrolling="yes" class="myframe" src="login.php" frameborder="0"></iframe> //not working with IFrame because everything will be handled in new frame as well-->
