@@ -12,11 +12,6 @@ if(isset($_POST['message']) && $_SESSION['myusername'])
 	{
         die('There was an error writing this file');
     }
-    else 
-	{
-        echo "$ret bytes written to file";
-	}
-	
 	
 } else {
 	die("SESSION not found");
